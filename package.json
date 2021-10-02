@@ -39,5 +39,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "peerDependencies": {
+    "@testing-library/dom": "^8.7.1"
+  },
+  "devDependencies": {
+    "html-react-parser": "^1.4.0"
   }
 }
