@@ -1,0 +1,49 @@
+.cards {
+    width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.news_card {
+    box-shadow: 0 0 10px;
+    width: min-content;
+    background-color: aliceblue;
+    border-radius: 15px;
+    margin: 10px 10px;
+
+    .addinfo {
+        display: flex;
+        height: min-content;
+
+        .date {
+            font-size: 14px;
+            margin-left: 8px;
+            margin-right: auto;
+            margin-top: revert;
+        }
+        .source {
+            margin-left: auto;
+            margin-right: 8px;
+        }
+    }
+
+    .small {
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+
+    .text p {
+        margin-top: -5px;
+        margin-left: 10px;
+        margin-right: 10px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical;
+    }
+}

@@ -1,5 +1,5 @@
 import "./index.css";
-import logo from "./logo.svg";
+import logo from "../svg/logo.svg";
 
 function Links() {
     return (

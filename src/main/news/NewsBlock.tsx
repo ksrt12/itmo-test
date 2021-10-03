@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Iresults } from "./types";
 import NewsCard from "./NewsCard";
-import "./index.css";
+import "./news.scss";
 import { NEWS } from "./news";
 
 function NewsBlock() {
@@ -39,7 +39,8 @@ function NewsBlock() {
     } else {
         return (
             <div className="container">
-                <div className="row row-cols-3">
+                <h2>Новости и события</h2>
+                <div className="cards">
                     {isLoaded ?
                         NEWS.map(item => <NewsCard key={item.id} {...item} />)
                         : <div>Загрузка...</div>
