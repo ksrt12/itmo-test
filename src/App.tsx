@@ -1,8 +1,17 @@
 import './App.css';
-import NewsBlock from "./ui/NewsBlock";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Header from "./header/Header";
+import Main from "./main/Main";
+
 
 function App() {
-    return <NewsBlock />;
+    return (
+        <div>
+            <Header />
+            <Main />
+        </div>
+
+    );
 }
 
 export default App;

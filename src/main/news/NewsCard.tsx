@@ -9,7 +9,7 @@ function NewsCard(props: Inews) {
     }).replace(" г.", "");
 
     return (
-        <div className="news_card">
+        <div className="col news_card">
             <img src={props.image_small} alt="u" />
             <p>{date}</p>
             {parseHTML(props.lead)}
