@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/itmo-test/static/css/main.9fa97c47.chunk.css",
+    "main.js": "/itmo-test/static/js/main.74a0f66f.chunk.js",
+    "main.js.map": "/itmo-test/static/js/main.74a0f66f.chunk.js.map",
+    "runtime-main.js": "/itmo-test/static/js/runtime-main.d94eb151.js",
+    "runtime-main.js.map": "/itmo-test/static/js/runtime-main.d94eb151.js.map",
+    "static/css/2.c1256375.chunk.css": "/itmo-test/static/css/2.c1256375.chunk.css",
+    "static/js/2.1a46dce4.chunk.js": "/itmo-test/static/js/2.1a46dce4.chunk.js",
+    "static/js/2.1a46dce4.chunk.js.map": "/itmo-test/static/js/2.1a46dce4.chunk.js.map",
+    "static/js/3.08253f8e.chunk.js": "/itmo-test/static/js/3.08253f8e.chunk.js",
+    "static/js/3.08253f8e.chunk.js.map": "/itmo-test/static/js/3.08253f8e.chunk.js.map",
+    "index.html": "/itmo-test/index.html",
+    "static/css/2.c1256375.chunk.css.map": "/itmo-test/static/css/2.c1256375.chunk.css.map",
+    "static/css/main.9fa97c47.chunk.css.map": "/itmo-test/static/css/main.9fa97c47.chunk.css.map",
+    "static/js/2.1a46dce4.chunk.js.LICENSE.txt": "/itmo-test/static/js/2.1a46dce4.chunk.js.LICENSE.txt",
+    "static/media/logo.c5a51324.svg": "/itmo-test/static/media/logo.c5a51324.svg",
+    "static/media/vk.7398b0ce.svg": "/itmo-test/static/media/vk.7398b0ce.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d94eb151.js",
+    "static/css/2.c1256375.chunk.css",
+    "static/js/2.1a46dce4.chunk.js",
+    "static/css/main.9fa97c47.chunk.css",
+    "static/js/main.74a0f66f.chunk.js"
+  ]
+}
