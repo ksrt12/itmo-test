@@ -72,11 +72,12 @@ function FeedBackForm(props: any) {
         { id: "problem", type: "textarea", label: "Что не понятно и нужно уточнить", require: "true", placeholder: "Введите ваше сообщение" },
     ];
     const [formValid, setFormValid] = useState(true);
-    const [feedbackDone, setFeedbackDone] = useState(false);
 
-    const closeAll = () => {
-        setFeedbackDone(false);
+
+    const showOk = (e: any) => {
+        e.preventDefault();
         props.closeForm(false);
+        props.openDone(true);
     };
 
     return (
@@ -85,17 +86,11 @@ function FeedBackForm(props: any) {
             {inputs.map(input => <MyInput key={input.id} {...input} />)}
             <button
                 disabled={!formValid}
-                onClick={() => setFeedbackDone(true)}
+                onClick={showOk}
                 type="submit"
                 className="btn btn-primary"
             >Отправить</button>
             <p>Отправляя данную форму, вы даете согласие на обработку своих Персональных данных</p>
-            <Modal active={feedbackDone} setActive={setFeedbackDone}>
-                {/* {setTimeout(closeAll, 5000)}; */}
-                <div className="done">Вопрос отправлен!</div>
-                <button className="btn btn-primary" onClick={closeAll}>Ок</button>
-
-            </Modal>
         </form >
     );
 }

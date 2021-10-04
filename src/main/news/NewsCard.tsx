@@ -12,11 +12,11 @@ function NewsCard(props: Inews) {
     return (
         <div className="news_card">
             <img className="small" src={props.image_small} alt="u" />
-            <div className="addinfo">
+            <div className="newscontent addinfo">
                 <p className="date">{date}</p>
                 <img className="source" src={vk} alt="vk" />
             </div>
-            <div className="text">{parseHTML(props.lead)}</div>
+            <div className="newscontent text">{parseHTML(props.lead)}</div>
         </div>
     );
 

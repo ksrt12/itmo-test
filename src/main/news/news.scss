@@ -1,5 +1,8 @@
+h2 {
+    margin-top: 4%;
+}
+
 .cards {
-    width: 1000px;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
@@ -9,41 +12,50 @@
 }
 
 .news_card {
-    box-shadow: 0 0 10px;
-    width: min-content;
-    background-color: aliceblue;
-    border-radius: 15px;
-    margin: 10px 10px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.16);
+    border-radius: 16px;
+    width: 300px;
+    background-color: white;
+    margin: 20px;
+
+    .newscontent {
+        margin: 0 25px;
+    }
 
     .addinfo {
         display: flex;
         height: min-content;
+        justify-content: space-between;
 
         .date {
-            font-size: 14px;
-            margin-left: 8px;
-            margin-right: auto;
+            text-transform: uppercase;
+            color: #6a6a6a;
+            mix-blend-mode: normal;
+            font-size: 12px;
             margin-top: revert;
-        }
-        .source {
-            margin-left: auto;
-            margin-right: 8px;
+            margin-bottom: revert;
         }
     }
 
     .small {
+        width: inherit;
         border-top-left-radius: 15px;
         border-top-right-radius: 15px;
     }
 
     .text p {
         margin-top: -5px;
-        margin-left: 10px;
-        margin-right: 10px;
         overflow: hidden;
         text-overflow: ellipsis;
         display: -webkit-box;
         -webkit-line-clamp: 5;
         -webkit-box-orient: vertical;
+
+        strong {
+            font-weight: normal;
+        }
     }
 }

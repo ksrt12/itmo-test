@@ -6,6 +6,7 @@ import { NEWS } from "./news";
 
 function NewsBlock() {
     const cardsNum = 6;
+    let newsSources = [];
 
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(true);
@@ -18,20 +19,27 @@ function NewsBlock() {
         total: 1
     });
 
-    // useEffect(() => {
-    //     fetch("https://news.itmo.ru/api/news/list/?ver=2.0&lead=1&per_page=" + cardsNum)
-    //         .then(res => res.json())
-    //         .then(
-    //             (result) => {
-    //                 setItems(result);
-    //                 setIsLoaded(true);
-    //             },
-    //             (error) => {
-    //                 setError(error);
-    //                 setIsLoaded(true);
-    //             }
-    //         );
-    // }, []);
+    useEffect(() => {
+        fetch("https://news.itmo.ru/api/news/list/?ver=2.0&lead=1&per_page=" + cardsNum)
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    setItems(result);
+                    setIsLoaded(true);
+                },
+                (error) => {
+                    setError(error);
+                    setIsLoaded(true);
+                }
+            );
+    }, []);
+
+
+    if (process.env.NODE_ENV === "development") {
+        newsSources = NEWS;
+    } else {
+        newsSources = items.news;
+    }
 
     if (error) {
         console.error(error);
@@ -42,7 +50,7 @@ function NewsBlock() {
                 <h2>Новости и события</h2>
                 <div className="cards">
                     {isLoaded ?
-                        NEWS.map(item => <NewsCard key={item.id} {...item} />)
+                        newsSources.map(item => <NewsCard key={item.id} {...item} />)
                         : <div>Загрузка...</div>
                     }
                 </div>

@@ -1,18 +1,19 @@
-import "./index.css";
+import "./header.scss";
 import logo from "../svg/logo.svg";
 
-function Links() {
-    return (
-        <div className="links">
-            <p>О лаборатории</p>
-            <p>Учебная деятельность</p>
-            <p>Научная деятельность</p>
-            <p>Новости</p>
-        </div>
-    );
+function makeMenuLink(title: string, href: string) {
+    return <a href={href}>{title}</a>;
 }
 
 function Header() {
+
+    const menuLinks = [
+        { title: "О лаборатории", href: "#" },
+        { title: "Учебная деятельность", href: "#" },
+        { title: "Научная деятельность", href: "#" },
+        { title: "Новости", href: "#" },
+        { title: "Контакты", href: "#" },
+    ];
 
     return (
         <div className="header">
@@ -20,10 +21,12 @@ function Header() {
                 <img width="331" height="36" src={logo} alt="logo" />
             </div>
             <div className="head">
-                <div className="hh">
-                    <p><strong>Лаборатория робототехники</strong></p>
+                <div className="head-name">
+                    <strong><a href="#">Лаборатория робототехники</a></strong>
                 </div>
-                <Links />
+                <div className="menu">
+                    {menuLinks.map(item => makeMenuLink(item.title, item.href))}
+                </div>
             </div>
         </div>
     );

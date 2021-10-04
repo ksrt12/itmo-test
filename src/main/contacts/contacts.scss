@@ -10,16 +10,22 @@
 
 .info {
     position: absolute;
-    top: 20%;
+    top: 14%;
     left: 20%;
     background-color: white;
-    width: 350px;
-    height: 250px;
+    width: 400px;
+    height: 280px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba($color: #5a5858, $alpha: 0.4);
     z-index: 1;
 
-    padding: 10px;
+    padding: 20px 40px;
+
+    a {
+        i {
+            margin-right: 7px;
+        }
+    }
 
     // top: -390px;
     // left: 24em;
