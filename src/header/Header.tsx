@@ -2,7 +2,7 @@ import "./header.scss";
 import logo from "../svg/logo.svg";
 
 function makeMenuLink(title: string, href: string) {
-    return <a href={href}>{title}</a>;
+    return <a key={title} href={href}>{title}</a>;
 }
 
 function Header() {
