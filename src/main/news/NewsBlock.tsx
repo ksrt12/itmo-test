@@ -2,13 +2,11 @@ import { useEffect, useState } from "react";
 import { Iresults } from "./types";
 import NewsCard from "./NewsCard";
 import "./news.scss";
-import { NEWS } from "./news";
+import emptyNews from "./news";
 
 function NewsBlock() {
     const cardsNum = 6;
-    let newsSources = [];
 
-    const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(true);
     const [items, setItems] = useState<Iresults>({
         category: 1,
@@ -19,6 +17,11 @@ function NewsBlock() {
         total: 1
     });
 
+    const empty = [];
+    for (let i = 0; i < cardsNum; i++) {
+        empty.push(<NewsCard key={i} {...emptyNews} />);
+    }
+
     useEffect(() => {
         fetch("https://news.itmo.ru/api/news/list/?ver=2.0&lead=1&per_page=" + cardsNum)
             .then(res => res.json())
@@ -28,35 +31,23 @@ function NewsBlock() {
                     setIsLoaded(true);
                 },
                 (error) => {
-                    setError(error);
-                    setIsLoaded(true);
+                    setIsLoaded(false);
                 }
             );
     }, []);
 
 
-    if (process.env.NODE_ENV === "development") {
-        newsSources = NEWS;
-    } else {
-        newsSources = items.news;
-    }
-
-    if (error) {
-        console.error(error);
-        return <div>Ошибка загрузки</div>;
-    } else {
-        return (
-            <div className="container">
-                <h2>Новости и события</h2>
-                <div className="cards">
-                    {isLoaded ?
-                        newsSources.map(item => <NewsCard key={item.id} {...item} />)
-                        : <div>Загрузка...</div>
-                    }
-                </div>
+    return (
+        <div className="container">
+            <h2>Новости и события</h2>
+            <div className="cards">
+                {isLoaded ?
+                    items.news.map(item => <NewsCard key={item.id} {...item} />)
+                    : empty
+                }
             </div>
-        );
-    }
+        </div>
+    );
 };
 
 export default NewsBlock;

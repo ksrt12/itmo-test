@@ -11,6 +11,11 @@ h2 {
     align-items: center;
 }
 
+.news_card.empty {
+    height: 337px;
+    background-color: #bebebee1;
+}
+
 .news_card {
     display: flex;
     flex-direction: column;
