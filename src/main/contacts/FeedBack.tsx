@@ -3,7 +3,7 @@ import validator from "validator";
 import InputMask from "react-input-mask";
 
 function MyInput(inputProps: any) {
-    const { value, setValue, isValid, setValid, require, ...props } = inputProps;
+    const { value, setValue, setValid, require, ...props } = inputProps;
     const [dirty, setDirty] = useState(false);
     const [error, setError] = useState("");
 
@@ -14,7 +14,7 @@ function MyInput(inputProps: any) {
 
         switch (e.target.id) {
             case "name":
-                if (length < 2) {
+                if (length < 3) {
                     newErr = "Некорректное имя!";
                 };
                 break;
@@ -46,12 +46,9 @@ function MyInput(inputProps: any) {
             if (e.target.value.length === 0 && require) {
                 setError("Обязательное поле");
             } else {
-                console.log("clear error");
                 setError("");
             }
         }
-        console.log("setting error", error, dirty);
-
         setValid(!error);
     };
 
@@ -89,7 +86,6 @@ function FeedBackForm(props: any) {
             placeholder: "Введите ваше имя",
             value: name,
             setValue: setName,
-            isValid: nameValid,
             setValid: setNameValid
 
         },
@@ -100,7 +96,6 @@ function FeedBackForm(props: any) {
             placeholder: "expample@itmo.ru",
             value: email,
             setValue: setEmail,
-            isValid: emailValid,
             setValid: setEmailValid
         },
         {
@@ -111,7 +106,6 @@ function FeedBackForm(props: any) {
             mask: "+7 (999) 999-99-99",
             value: phone,
             setValue: setPhone,
-            isValid: phoneValid,
             setValid: setPhoneValid
 
         },
@@ -123,7 +117,6 @@ function FeedBackForm(props: any) {
             rows: 5,
             value: message,
             setValue: setMessage,
-            isValid: messageValid,
             setValid: setMessageValid
         },
     ];
@@ -139,6 +132,7 @@ function FeedBackForm(props: any) {
 
     const showOk = (e: any) => {
         e.preventDefault();
+        console.log(name, email, phone, message);
         props.closeForm(false);
         props.openDone(true);
         setTimeout(() => {
