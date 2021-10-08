@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/itmo-test/static/css/main.d4b6cdb4.chunk.css",
-    "main.js": "/itmo-test/static/js/main.0cfd4325.chunk.js",
-    "main.js.map": "/itmo-test/static/js/main.0cfd4325.chunk.js.map",
-    "runtime-main.js": "/itmo-test/static/js/runtime-main.574aa037.js",
-    "runtime-main.js.map": "/itmo-test/static/js/runtime-main.574aa037.js.map",
-    "static/css/2.c784df27.chunk.css": "/itmo-test/static/css/2.c784df27.chunk.css",
-    "static/js/2.2e073d9d.chunk.js": "/itmo-test/static/js/2.2e073d9d.chunk.js",
-    "static/js/2.2e073d9d.chunk.js.map": "/itmo-test/static/js/2.2e073d9d.chunk.js.map",
-    "static/js/3.144c053f.chunk.js": "/itmo-test/static/js/3.144c053f.chunk.js",
-    "static/js/3.144c053f.chunk.js.map": "/itmo-test/static/js/3.144c053f.chunk.js.map",
+    "main.css": "/itmo-test/static/css/main.edd23dcb.chunk.css",
+    "main.js": "/itmo-test/static/js/main.f0fe1975.chunk.js",
+    "main.js.map": "/itmo-test/static/js/main.f0fe1975.chunk.js.map",
+    "runtime-main.js": "/itmo-test/static/js/runtime-main.49c49dfb.js",
+    "runtime-main.js.map": "/itmo-test/static/js/runtime-main.49c49dfb.js.map",
+    "static/css/2.d0a07dce.chunk.css": "/itmo-test/static/css/2.d0a07dce.chunk.css",
+    "static/js/2.bd847200.chunk.js": "/itmo-test/static/js/2.bd847200.chunk.js",
+    "static/js/2.bd847200.chunk.js.map": "/itmo-test/static/js/2.bd847200.chunk.js.map",
+    "static/js/3.102179c3.chunk.js": "/itmo-test/static/js/3.102179c3.chunk.js",
+    "static/js/3.102179c3.chunk.js.map": "/itmo-test/static/js/3.102179c3.chunk.js.map",
     "index.html": "/itmo-test/index.html",
-    "static/css/2.c784df27.chunk.css.map": "/itmo-test/static/css/2.c784df27.chunk.css.map",
-    "static/css/main.d4b6cdb4.chunk.css.map": "/itmo-test/static/css/main.d4b6cdb4.chunk.css.map",
-    "static/js/2.2e073d9d.chunk.js.LICENSE.txt": "/itmo-test/static/js/2.2e073d9d.chunk.js.LICENSE.txt",
+    "static/css/2.d0a07dce.chunk.css.map": "/itmo-test/static/css/2.d0a07dce.chunk.css.map",
+    "static/css/main.edd23dcb.chunk.css.map": "/itmo-test/static/css/main.edd23dcb.chunk.css.map",
+    "static/js/2.bd847200.chunk.js.LICENSE.txt": "/itmo-test/static/js/2.bd847200.chunk.js.LICENSE.txt",
     "static/media/bg.4118a8b9.svg": "/itmo-test/static/media/bg.4118a8b9.svg",
     "static/media/bootstrap-icons.css": "/itmo-test/static/media/bootstrap-icons.dfd0ea12.woff2",
     "static/media/fb.771b6c21.svg": "/itmo-test/static/media/fb.771b6c21.svg",
@@ -26,10 +26,10 @@
     "static/media/vk.ae17a367.svg": "/itmo-test/static/media/vk.ae17a367.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.574aa037.js",
-    "static/css/2.c784df27.chunk.css",
-    "static/js/2.2e073d9d.chunk.js",
-    "static/css/main.d4b6cdb4.chunk.css",
-    "static/js/main.0cfd4325.chunk.js"
+    "static/js/runtime-main.49c49dfb.js",
+    "static/css/2.d0a07dce.chunk.css",
+    "static/js/2.bd847200.chunk.js",
+    "static/css/main.edd23dcb.chunk.css",
+    "static/js/main.f0fe1975.chunk.js"
   ]
 }
