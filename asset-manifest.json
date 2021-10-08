@@ -1,23 +1,25 @@
 {
   "files": {
-    "main.css": "/itmo-test/static/css/main.9e440725.chunk.css",
-    "main.js": "/itmo-test/static/js/main.f5c7af68.chunk.js",
-    "main.js.map": "/itmo-test/static/js/main.f5c7af68.chunk.js.map",
-    "runtime-main.js": "/itmo-test/static/js/runtime-main.212e3e46.js",
-    "runtime-main.js.map": "/itmo-test/static/js/runtime-main.212e3e46.js.map",
+    "main.css": "/itmo-test/static/css/main.ef7d4991.chunk.css",
+    "main.js": "/itmo-test/static/js/main.6072a48b.chunk.js",
+    "main.js.map": "/itmo-test/static/js/main.6072a48b.chunk.js.map",
+    "runtime-main.js": "/itmo-test/static/js/runtime-main.a9728b0c.js",
+    "runtime-main.js.map": "/itmo-test/static/js/runtime-main.a9728b0c.js.map",
     "static/css/2.d0a07dce.chunk.css": "/itmo-test/static/css/2.d0a07dce.chunk.css",
     "static/js/2.539e69b5.chunk.js": "/itmo-test/static/js/2.539e69b5.chunk.js",
     "static/js/2.539e69b5.chunk.js.map": "/itmo-test/static/js/2.539e69b5.chunk.js.map",
-    "static/js/3.be1ce639.chunk.js": "/itmo-test/static/js/3.be1ce639.chunk.js",
-    "static/js/3.be1ce639.chunk.js.map": "/itmo-test/static/js/3.be1ce639.chunk.js.map",
+    "static/js/3.0fcd40e7.chunk.js": "/itmo-test/static/js/3.0fcd40e7.chunk.js",
+    "static/js/3.0fcd40e7.chunk.js.map": "/itmo-test/static/js/3.0fcd40e7.chunk.js.map",
     "index.html": "/itmo-test/index.html",
     "static/css/2.d0a07dce.chunk.css.map": "/itmo-test/static/css/2.d0a07dce.chunk.css.map",
-    "static/css/main.9e440725.chunk.css.map": "/itmo-test/static/css/main.9e440725.chunk.css.map",
+    "static/css/main.ef7d4991.chunk.css.map": "/itmo-test/static/css/main.ef7d4991.chunk.css.map",
     "static/js/2.539e69b5.chunk.js.LICENSE.txt": "/itmo-test/static/js/2.539e69b5.chunk.js.LICENSE.txt",
-    "static/media/bg.4118a8b9.svg": "/itmo-test/static/media/bg.4118a8b9.svg",
+    "static/media/bg.bfe0e963.png": "/itmo-test/static/media/bg.bfe0e963.png",
     "static/media/bootstrap-icons.css": "/itmo-test/static/media/bootstrap-icons.dfd0ea12.woff2",
+    "static/media/en.546d2a58.svg": "/itmo-test/static/media/en.546d2a58.svg",
     "static/media/fb.771b6c21.svg": "/itmo-test/static/media/fb.771b6c21.svg",
     "static/media/inst.be0a2d22.svg": "/itmo-test/static/media/inst.be0a2d22.svg",
+    "static/media/lablogo.75e74da7.svg": "/itmo-test/static/media/lablogo.75e74da7.svg",
     "static/media/logo.c5a51324.svg": "/itmo-test/static/media/logo.c5a51324.svg",
     "static/media/logo.fc694a28.svg": "/itmo-test/static/media/logo.fc694a28.svg",
     "static/media/App.scss": "/itmo-test/static/media/muller.3df62da4.ttf",
@@ -26,10 +28,10 @@
     "static/media/vk.ae17a367.svg": "/itmo-test/static/media/vk.ae17a367.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.212e3e46.js",
+    "static/js/runtime-main.a9728b0c.js",
     "static/css/2.d0a07dce.chunk.css",
     "static/js/2.539e69b5.chunk.js",
-    "static/css/main.9e440725.chunk.css",
-    "static/js/main.f5c7af68.chunk.js"
+    "static/css/main.ef7d4991.chunk.css",
+    "static/js/main.6072a48b.chunk.js"
   ]
 }
