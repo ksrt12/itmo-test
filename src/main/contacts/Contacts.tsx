@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Modal from "../../common/Modal";
-import FeedBackForm from "./FeedBackForm";
-import FeedBackDone from "./FeedBackDone";
+import { FeedBackForm, FeedBackDone } from "./FeedBack";
 import { YMaps, Map, Placemark } from 'react-yandex-maps';
 import "./contacts.scss";
 

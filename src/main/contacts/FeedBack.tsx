@@ -3,8 +3,7 @@ import validator from "validator";
 import InputMask from "react-input-mask";
 
 function MyInput(inputProps: any) {
-    const { defval, defset, require, ...props } = inputProps;
-    const [value, setValue] = useState(defval || "");
+    const { value, setValue, isValid, setValid, require, ...props } = inputProps;
     const [dirty, setDirty] = useState(false);
     const [error, setError] = useState("");
 
@@ -15,7 +14,7 @@ function MyInput(inputProps: any) {
 
         switch (e.target.id) {
             case "name":
-                if (length && !validator.isAlpha(newVal, "ru-RU")) {
+                if (length < 2) {
                     newErr = "Некорректное имя!";
                 };
                 break;
@@ -38,7 +37,7 @@ function MyInput(inputProps: any) {
 
         setError(newErr);
         setValue(newVal);
-        defset(!newErr && newVal.length);
+        setValid(!newErr && newVal.length);
     };
 
     const blurHandler = (e: any) => {
@@ -53,7 +52,7 @@ function MyInput(inputProps: any) {
         }
         console.log("setting error", error, dirty);
 
-        defset(!error);
+        setValid(!error);
     };
 
     const MyTag = props.type === "textarea" ? "textarea" : props.type === "phone" ? InputMask : "input";
@@ -72,27 +71,37 @@ function MyInput(inputProps: any) {
 
 function FeedBackForm(props: any) {
     const [formValid, setFormValid] = useState(false);
-    const [name, setName] = useState(false);
-    const [email, setEmail] = useState(false);
-    const [phone, setPhone] = useState(false);
-    const [message, setMessage] = useState(false);
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [phone, setPhone] = useState("");
+    const [message, setMessage] = useState("");
+
+    const [nameValid, setNameValid] = useState(false);
+    const [emailValid, setEmailValid] = useState(false);
+    const [phoneValid, setPhoneValid] = useState(false);
+    const [messageValid, setMessageValid] = useState(false);
 
     const inputs = [
         {
             id: "name", type: "text",
-            label: "Ваши фамилия и имя",
+            label: "Ваши имя и фамилия",
             require: true,
             placeholder: "Введите ваше имя",
-            defval: name,
-            defset: setName
+            value: name,
+            setValue: setName,
+            isValid: nameValid,
+            setValid: setNameValid
+
         },
         {
             id: "email", type: "email",
             label: "Электронная почта",
             require: true,
             placeholder: "expample@itmo.ru",
-            defval: email,
-            defset: setEmail
+            value: email,
+            setValue: setEmail,
+            isValid: emailValid,
+            setValid: setEmailValid
         },
         {
             id: "phone", type: "phone",
@@ -100,8 +109,10 @@ function FeedBackForm(props: any) {
             require: false,
             placeholder: "+7 (999) 999-99-99",
             mask: "+7 (999) 999-99-99",
-            defval: phone,
-            defset: setPhone
+            value: phone,
+            setValue: setPhone,
+            isValid: phoneValid,
+            setValid: setPhoneValid
 
         },
         {
@@ -110,27 +121,33 @@ function FeedBackForm(props: any) {
             require: true,
             placeholder: "Введите ваше сообщение",
             rows: 5,
-            defval: message,
-            defset: setMessage
+            value: message,
+            setValue: setMessage,
+            isValid: messageValid,
+            setValid: setMessageValid
         },
     ];
 
     useEffect(() => {
-        if (name && email && phone && message) {
+        if (nameValid && emailValid && phoneValid && messageValid) {
             setFormValid(true);
         } else {
             setFormValid(false);
         }
 
-    }, [name, email, phone, message]);
-
-    console.log(name, email, phone, message);
-
+    }, [nameValid, emailValid, phoneValid, messageValid]);
 
     const showOk = (e: any) => {
         e.preventDefault();
         props.closeForm(false);
         props.openDone(true);
+        setTimeout(() => {
+            setFormValid(false);
+            for (const i of inputs) {
+                i.setValid(false);
+                i.setValue("");
+            }
+        }, 1000);
     };
 
     return (
@@ -145,9 +162,18 @@ function FeedBackForm(props: any) {
                 <i className="bi bi-envelope"></i>
                 Отправить
             </button>
-
         </form >
     );
 }
 
-export default FeedBackForm;
+function FeedBackDone(props: any) {
+    return (
+        <div className="feedbackDone">
+            <h4>Спасибо за обратную связь!</h4>
+            <button className="btn btn-primary" onClick={() => props.closeDone(false)}>Ок</button>
+        </div>
+    );
+}
+
+
+export { FeedBackForm, FeedBackDone };

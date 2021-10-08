@@ -37,6 +37,11 @@ h4 {
     -webkit-border-radius: 50px;
     color: #fff;
     text-decoration: none;
+    transition: all 0.5s;
+    &:hover {
+        color: #fff;
+        background: #3951e7;
+    }
 }
 
 a {

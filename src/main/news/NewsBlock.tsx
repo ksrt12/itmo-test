@@ -7,7 +7,7 @@ import emptyNews from "./news";
 function NewsBlock() {
     const cardsNum = 6;
 
-    const [isLoaded, setIsLoaded] = useState(true);
+    const [isLoaded, setIsLoaded] = useState(false);
     const [items, setItems] = useState<Iresults>({
         category: 1,
         last_page: 1,
