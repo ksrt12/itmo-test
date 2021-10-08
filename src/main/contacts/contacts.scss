@@ -53,6 +53,14 @@
     .form-group {
         label {
             font-weight: bold;
+            .error {
+                font-weight: normal;
+                color: red;
+                font-size: 14px;
+            }
+        }
+        .form-control {
+            margin-top: 4px;
         }
     }
 
@@ -64,6 +72,10 @@
         i {
             margin-right: 7px;
         }
+    }
+    button:disabled,
+    button[disabled] {
+        background-color: #3950e7a6;
     }
 }
 

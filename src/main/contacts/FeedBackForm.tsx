@@ -1,77 +1,130 @@
-import { useState } from "react";
-import Modal from "../../common/Modal";
+import { useEffect, useState } from "react";
+import validator from "validator";
+import InputMask from "react-input-mask";
 
-
-function MyInput(props: any) {
-    const [value, setValue] = useState("");
+function MyInput(inputProps: any) {
+    const { defval, defset, require, ...props } = inputProps;
+    const [value, setValue] = useState(defval || "");
     const [dirty, setDirty] = useState(false);
     const [error, setError] = useState("");
 
-    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
     const updateValue = (e: any) => {
-        const newVal = e.target.value;
+        let newVal = e.target.value;
+        let newErr = "";
+        const length = newVal.length;
+
         switch (e.target.id) {
+            case "name":
+                if (length && !validator.isAlpha(newVal, "ru-RU")) {
+                    newErr = "Некорректное имя!";
+                };
+                break;
             case "email":
-                if (!re.test(String(newVal).toLowerCase())) {
-                    setError("Некорректный Email!");
-                } else {
-                    setError("");
+                if (length && !validator.isEmail(newVal)) {
+                    newErr = "Некорректный Email!";
                 }
                 break;
-            case "name":
+            case "phone":
+                if (!/^(\+7)\s\(\d{3}\)\s\d{3}-\d{2}-\d{2}$/.test(newVal)) {
+                    newErr = "Некорректный номер телефона!";
+                }
                 break;
             case "problem":
-                if (newVal.length > 300) {
-                    setError("Достигнута максимальная длинна сообщения (300)");
-                } else {
-                    setError("");
+                if (length > 300) {
+                    newErr = "Достигнута максимальная длинна сообщения (300)";
                 }
                 break;
         }
+
+        setError(newErr);
         setValue(newVal);
+        defset(!newErr && newVal.length);
     };
 
     const blurHandler = (e: any) => {
-        if (e.target.value.length === 0 && e.target.require === "true") {
-            setError("Обязательное поле");
-        } else {
-            setError("");
-            updateValue(e);
-        }
         setDirty(true);
+        if (!error) {
+            if (e.target.value.length === 0 && require) {
+                setError("Обязательное поле");
+            } else {
+                console.log("clear error");
+                setError("");
+            }
+        }
+        console.log("setting error", error, dirty);
+
+        defset(!error);
     };
 
+    const MyTag = props.type === "textarea" ? "textarea" : props.type === "phone" ? InputMask : "input";
     return (
-        <div className="form-group">
-            <label htmlFor={props.id}>{props.label} {(error && dirty) && <div style={{ color: "red" }}>{error}</div>}</label>
-            {props.type !== "textarea" ?
-                <input className="form-control"
-                    {...props}
-                    value={value}
-                    onChange={updateValue}
-                    onBlur={blurHandler}
-                />
-                :
-                <textarea rows="5" className="form-control"
-                    {...props}
-                    value={value}
-                    onChange={updateValue}
-                    onBlur={blurHandler}
-                />
-            }
+        <div key={props.id} className="form-group">
+            <label htmlFor={props.id}>{props.label} {(error && dirty) && <div className="error">{error}</div>}</label>
+            <MyTag className="form-control"
+                {...props}
+                value={value}
+                onChange={updateValue}
+                onBlur={blurHandler}
+            />
         </div>
     );
 }
 
 function FeedBackForm(props: any) {
+    const [formValid, setFormValid] = useState(false);
+    const [name, setName] = useState(false);
+    const [email, setEmail] = useState(false);
+    const [phone, setPhone] = useState(false);
+    const [message, setMessage] = useState(false);
+
     const inputs = [
-        { id: "name", type: "text", label: "Ваши фамилия и имя", require: "true", placeholder: "Введите ваше имя" },
-        { id: "email", type: "email", label: "Электронная почта", require: "true", placeholder: "expample@itmo.ru" },
-        { id: "phone", type: "phone", label: "Номер телефона", require: "false", placeholder: "+7 123 456 78 90" },
-        { id: "problem", type: "textarea", label: "Что не понятно и нужно уточнить", require: "true", placeholder: "Введите ваше сообщение" },
+        {
+            id: "name", type: "text",
+            label: "Ваши фамилия и имя",
+            require: true,
+            placeholder: "Введите ваше имя",
+            defval: name,
+            defset: setName
+        },
+        {
+            id: "email", type: "email",
+            label: "Электронная почта",
+            require: true,
+            placeholder: "expample@itmo.ru",
+            defval: email,
+            defset: setEmail
+        },
+        {
+            id: "phone", type: "phone",
+            label: "Номер телефона",
+            require: false,
+            placeholder: "+7 (999) 999-99-99",
+            mask: "+7 (999) 999-99-99",
+            defval: phone,
+            defset: setPhone
+
+        },
+        {
+            id: "problem", type: "textarea",
+            label: "Что не понятно и нужно уточнить",
+            require: true,
+            placeholder: "Введите ваше сообщение",
+            rows: 5,
+            defval: message,
+            defset: setMessage
+        },
     ];
-    const [formValid, setFormValid] = useState(true);
+
+    useEffect(() => {
+        if (name && email && phone && message) {
+            setFormValid(true);
+        } else {
+            setFormValid(false);
+        }
+
+    }, [name, email, phone, message]);
+
+    console.log(name, email, phone, message);
 
 
     const showOk = (e: any) => {
@@ -83,8 +136,8 @@ function FeedBackForm(props: any) {
     return (
         <form className="feedback">
             <h2 style={{ textAlign: "center" }}>Напишите нам!</h2>
-            {inputs.map(input => <MyInput key={input.id} {...input} />)}
-            <p>Отправляя данную форму, вы даете согласие на обработку своих <a href="http://itmo.ru">Персональных данных</a></p>
+            {inputs.map(input => MyInput(input))}
+            <p>Отправляя данную форму, вы даете согласие на обработку своих <a href="https://itmo.ru">Персональных данных</a></p>
             <button className="click-more"
                 disabled={!formValid}
                 onClick={showOk}

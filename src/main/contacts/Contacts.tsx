@@ -34,7 +34,8 @@ function Contacts() {
                 <DefPhone />
                 <a className="click-more" onClick={() => setFeedbackActive(true)}>
                     <i className="bi bi-envelope"></i>
-                    Написать нам</a>
+                    Написать нам
+                </a>
                 <Modal active={feedbackActive} setActive={setFeedbackActive}>
                     <FeedBackForm closeForm={setFeedbackActive} openDone={setFeedbackDone} />
                 </Modal>
