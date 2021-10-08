@@ -38,7 +38,7 @@ function NewsBlock() {
 
 
     return (
-        <div className="container">
+        <div className="container news">
             <h2>Новости и события</h2>
             <div className="cards">
                 {isLoaded ?

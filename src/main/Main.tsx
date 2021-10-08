@@ -1,12 +1,14 @@
 import Banner from "./banner/Banner";
 import Contacts from "./contacts/Contacts";
 import NewsBlock from "./news/NewsBlock";
+import Subjects from "./subjects/Subjects";
 
 function Main() {
     return (
         <div className="main">
             <Banner />
             <NewsBlock />
+            <Subjects />
             <Contacts />
         </div>
     );

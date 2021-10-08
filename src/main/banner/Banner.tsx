@@ -1,4 +1,4 @@
-import bg from "./bg.svg";
+import bg from "./bg.png";
 import "./banner.scss";
 import { useState } from "react";
 
@@ -23,7 +23,7 @@ function Banner() {
         },
         {
             title: "Слайд 2",
-            text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam quisquam a, qui sequi alias deleniti perspiciatis molestias voluptate inventore ex sapiente recusandae omnis eveniet veniam, earum impedit. Deleniti, ratione eaque?",
+            text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam modi magnam, neque libero autem optio, alias itaque, dolores porro corrupti quidem temporibus ipsam sed! Sequi eveniet modi earum quo voluptatem?",
             href: "#"
         },
         {
