@@ -17,7 +17,7 @@ function NewsCard(props: Inews) {
                 <img className="small" src={props.image_small} alt="u" />
                 <div className="newscontent addinfo">
                     <p className="date">{date}</p>
-                    <img className="source" src={vk} alt="vk" />
+                    <a className="source" target="_blank" rel="noreferrer" href={props.url}><img src={vk} alt="vk" /></a>
                 </div>
                 <div className="newscontent text">{parseHTML(props.lead)}</div>
             </div>

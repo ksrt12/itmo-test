@@ -43,6 +43,11 @@ h2 {
             margin-top: revert;
             margin-bottom: revert;
         }
+
+        .source {
+            display: flex;
+            align-items: center;
+        }
     }
 
     .small {
