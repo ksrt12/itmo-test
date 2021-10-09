@@ -1,25 +1,36 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./subjects.scss";
 
 function Subj(name: string, text: string) {
-    const [isOpen, setIsOpen] = useState(false);
+    const [isOpen, setOpen] = useState(false);
     const [showText, setShowText] = useState("none");
     const [rotateDeg, setRotateDeg] = useState("0deg");
     const [color, setColor] = useState("#3951e7");
 
-    const defs = {
-        showText: ["none", "block"],
-        rotateDeg: ["0deg", "180deg"],
-        colors: ["#3951e7", "#832ab9"],
-    };
+    const defs = [
+        {
+            setfunc: setShowText,
+            vals: ["none", "block"]
+        },
+        {
+            setfunc: setRotateDeg,
+            vals: ["0deg", "180deg"]
+        },
+        {
+            setfunc: setColor,
+            vals: ["#3951e7", "#832ab9"]
+        },
+    ];
 
-    const show = () => {
-        setIsOpen(!isOpen);
-        const isOpenNum = Number(!isOpen);
-        setShowText(defs.showText[isOpenNum]);
-        setRotateDeg(defs.rotateDeg[isOpenNum]);
-        setColor(defs.colors[isOpenNum]);
-    };
+
+    useEffect(() => {
+        const isOpenNum = Number(isOpen);
+        defs.forEach(i => {
+            i.setfunc(i.vals[isOpenNum]);
+        });
+    }, [isOpen]);
+
+    const show = () => setOpen(!isOpen);
 
     return (
         <div key={name} className="subj">

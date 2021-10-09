@@ -28,18 +28,22 @@ function Footer() {
                     <p className="copy">Разработка © 2020 Управление по развитию<br />и поддержке портала</p>
                 </div>
 
-                <div className="itmo-links">
-                    {links.map(link => <a key={link.label} href={link.href}>{link.label}</a>)}
-                </div>
+                <div className="links">
+                    <div className="itmo-links">
+                        {links.map(link => <a key={link.label} href={link.href}>{link.label}</a>)}
+                    </div>
 
-                <div className="itmo-links">
-                    {links.map(link => <a key={link.label} href={link.href}>{link.label}</a>)}
+                    <div className="itmo-links">
+                        {links.map(link => <a key={link.label} href={link.href}>{link.label}</a>)}
+                    </div>
                 </div>
 
                 <div className="adress">
-                    <p className="copy">г. Санкт-Петербург, Кронверкский пр., 49, ауд. 333 </p>
-                    <DefPhone className="copy" />
-                    <p className="copy"> E-mail: <a href="mailto:job@corp.ifmo.ru">job@corp.ifmo.ru</a></p>
+                    <div className="text">
+                        <p className="copy">г. Санкт-Петербург, Кронверкский пр., 49, ауд. 333 </p>
+                        <DefPhone className="copy" />
+                        <p className="copy"> E-mail: <a href="mailto:job@corp.ifmo.ru">job@corp.ifmo.ru</a></p>
+                    </div>
 
                     <div className="social">
                         <p>Мы в соцсетях</p>

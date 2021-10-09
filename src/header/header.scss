@@ -58,11 +58,17 @@
             display: flex;
             align-items: center;
             align-content: center;
+
+            a {
+                margin: 0 12px;
+                font-weight: normal;
+            }
         }
 
-        .menu a {
-            margin: 0 12px;
-            font-weight: normal;
+        @media (max-width: 1260px) {
+            .menu {
+                display: none;
+            }
         }
     }
 }
