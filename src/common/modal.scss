@@ -19,7 +19,20 @@
 }
 
 .content {
+    position: relative;
     padding: 20px;
     border-radius: 12px;
     background-color: white;
+    .bi-x {
+        position: absolute;
+        right: 20px;
+        font-size: 20pt;
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 700px) {
+    .bi-x {
+        display: none;
+    }
 }

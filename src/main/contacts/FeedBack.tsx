@@ -148,7 +148,7 @@ function FeedBackForm(props: any) {
         <form className="feedback">
             <h2 style={{ textAlign: "center" }}>Напишите нам!</h2>
             {inputs.map(input => MyInput(input))}
-            <p>Отправляя данную форму, вы даете согласие на обработку своих <a href="https://itmo.ru">Персональных данных</a></p>
+            <p className="consent">Отправляя данную форму, вы даете согласие на обработку своих <a href="https://itmo.ru">Персональных данных</a></p>
             <button className="click-more"
                 disabled={!formValid}
                 onClick={showOk}

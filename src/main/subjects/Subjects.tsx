@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./subjects.scss";
 
 function Subj(name: string, text: string) {
@@ -22,15 +22,13 @@ function Subj(name: string, text: string) {
         },
     ];
 
-
-    useEffect(() => {
-        const isOpenNum = Number(isOpen);
+    const show = () => {
+        const isOpenNum = Number(!isOpen);
         defs.forEach(i => {
             i.setfunc(i.vals[isOpenNum]);
         });
-    }, [isOpen]);
-
-    const show = () => setOpen(!isOpen);
+        setOpen(!isOpen);
+    };
 
     return (
         <div key={name} className="subj">

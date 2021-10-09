@@ -13,14 +13,14 @@
         width: 55%;
         margin: 6px;
         padding: 2% 3%;
-        border: 1px solid #eaeffc;
+        border: 1px solid var(--itmo-lightblue);
         box-sizing: border-box;
         border-radius: 8px;
         background-color: #fff;
         transition: all 0.3s ease-in;
 
         &:hover {
-            background-color: #eaeffc;
+            background-color: var(--itmo-lightblue);
         }
         .head {
             flex: auto;
