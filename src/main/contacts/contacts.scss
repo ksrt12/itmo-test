@@ -36,6 +36,14 @@
             margin: 20px 40px;
             width: 384px;
 
+            .bi-x {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                font-size: 20pt;
+                cursor: pointer;
+            }
+
             .form-group {
                 width: 100%;
                 margin-bottom: 15px;

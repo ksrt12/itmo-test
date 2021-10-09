@@ -130,10 +130,12 @@ function FeedBackForm(props: any) {
 
     }, [nameValid, emailValid, phoneValid, messageValid]);
 
+    const close = () => props.closeForm(false);
+
     const showOk = (e: any) => {
         e.preventDefault();
         console.log(name, email, phone, message);
-        props.closeForm(false);
+        close();
         props.openDone(true);
         setTimeout(() => {
             setFormValid(false);
@@ -146,6 +148,7 @@ function FeedBackForm(props: any) {
 
     return (
         <form className="feedback">
+            <i className="bi bi-x" onClick={close}></i>
             <h2 style={{ textAlign: "center" }}>Напишите нам!</h2>
             {inputs.map(input => MyInput(input))}
             <p className="consent">Отправляя данную форму, вы даете согласие на обработку своих <a href="https://itmo.ru">Персональных данных</a></p>

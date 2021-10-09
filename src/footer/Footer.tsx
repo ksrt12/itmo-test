@@ -6,9 +6,6 @@ import vk from "./vk.svg";
 import inst from "./inst.svg";
 import twttr from "./twttr.svg";
 
-
-
-
 function Footer() {
 
     const links = [
@@ -54,8 +51,6 @@ function Footer() {
                     </div>
 
                 </div>
-
-
             </div>
             <div className="botton-block">
                 <a className="copy" href="#">Политика по обработке Персональных данных</a>
