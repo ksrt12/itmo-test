@@ -1,10 +1,11 @@
 import "./header.scss";
-import logo from "../svg/logo.svg";
+import logo from "./logo.svg";
 import en from "./en.svg";
 import lab from "./lablogo.svg";
 import { Nav, Navbar } from "react-bootstrap";
+import MyLink from "../common/MyLink";
 
-function Header() {
+const Header = () => {
 
     const menuLinks = [
         { title: "О лаборатории", href: "#" },
@@ -17,7 +18,9 @@ function Header() {
     return (
         <div className="header">
             <div className="top">
-                <img className="logo" src={logo} alt="logo" />
+                <MyLink href="https://itmo.ru">
+                    <img className="logo" src={logo} alt="logo" />
+                </MyLink>
                 <div className="language">
                     <p>En</p>
                     <img src={en} alt="en" />
@@ -40,6 +43,6 @@ function Header() {
         </div>
     );
 
-}
+};
 
 export default Header;

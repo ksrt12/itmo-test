@@ -6,6 +6,7 @@
         height: 400px;
         background-color: rgba(124, 111, 111, 0.5);
     }
+
     .info {
         * {
             transition: all 0.3s;
@@ -23,74 +24,11 @@
 
         padding: 20px 40px;
 
-        a {
+        button {
+            border: none;
             i {
                 margin-right: 7px;
             }
-        }
-
-        .feedback {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 20px 40px;
-            width: 384px;
-
-            .bi-x {
-                position: absolute;
-                top: 20px;
-                right: 20px;
-                font-size: 20pt;
-                cursor: pointer;
-            }
-
-            .form-group {
-                width: 100%;
-                margin-bottom: 15px;
-            }
-
-            .consent {
-                text-align: center;
-                font-style: normal;
-                font-weight: normal;
-                font-size: 14px;
-                line-height: 19px;
-            }
-
-            .form-group {
-                label {
-                    font-weight: bold;
-                    .error {
-                        font-weight: normal;
-                        color: red;
-                        font-size: 14px;
-                    }
-                }
-                .form-control {
-                    margin-top: 4px;
-                }
-            }
-
-            button {
-                border: none;
-                background-color: var(--itmo-blue);
-                height: 50px;
-
-                i {
-                    margin-right: 7px;
-                }
-            }
-            button:disabled,
-            button[disabled] {
-                background-color: var(--itmo-blue-dis);
-            }
-        }
-
-        .feedbackDone {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 400px;
         }
     }
 
@@ -113,14 +51,6 @@
             padding: 20px 10%;
             h2 {
                 text-align: center;
-            }
-            .feedback {
-                margin: auto;
-                width: 80%;
-                // overflow-y: scroll;
-            }
-            .feedbackDone {
-                width: auto;
             }
         }
     }

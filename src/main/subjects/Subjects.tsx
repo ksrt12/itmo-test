@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./subjects.scss";
 
-function Subj(name: string, text: string) {
+const Subj = (name: string, text: string) => {
     const [isOpen, setOpen] = useState(false);
     const [showText, setShowText] = useState("none");
     const [rotateDeg, setRotateDeg] = useState("0deg");
@@ -39,9 +39,9 @@ function Subj(name: string, text: string) {
             <div className="text" style={{ display: showText }}>{text}</div>
         </div >
     );
-}
+};
 
-function Subjects() {
+const Subjects = () => {
     const subjs = [
         {
             name: "Алгоритмы",
@@ -72,6 +72,6 @@ function Subjects() {
             {subjs.map(item => Subj(item.name, item.text))}
         </div>
     );
-}
+};
 
 export default Subjects;

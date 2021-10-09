@@ -1,6 +1,6 @@
 import "./modal.scss";
 
-function Modal(props: { active: boolean, setActive: any, children: any; }) {
+const Modal = (props: { active: boolean, setActive: any, children: any; }) => {
     const close = () => props.setActive(false);
     return (
         <div className={props.active ? "modal active" : "modal"}
@@ -10,6 +10,6 @@ function Modal(props: { active: boolean, setActive: any, children: any; }) {
             </div>
         </div>
     );
-}
+};
 
 export default Modal;

@@ -1,20 +1,22 @@
 import { useState } from "react";
 import Modal from "../../common/Modal";
-import { FeedBackForm, FeedBackDone } from "./FeedBack";
+import MyLink from "../../common/MyLink";
+import { FeedBackForm, FeedBackDone } from "../feedback/FeedBack";
 import { YMaps, Map, Placemark } from 'react-yandex-maps';
 import "./contacts.scss";
 
+
 const DefPhone = (props: any) => {
     const phone = "+79315380170";
+
     return (
         <p className={props.className}>
-            Тел: <a href={`tel:${phone}`}>{phone.replace(/([0-9]{1})([0-9]{3})([0-9]{3})([0-9]{2})([0-9]{2})/, '$1 ($2) $3-$4-$5')}</a>
+            Тел: <MyLink href={`tel:${phone}`}>{phone.replace(/([0-9]{1})([0-9]{3})([0-9]{3})([0-9]{2})([0-9]{2})/, '$1 ($2) $3-$4-$5')}</MyLink>
         </p>
     );
 };
 
-function Contacts() {
-
+const Contacts = () => {
     const [feedbackActive, setFeedbackActive] = useState(false);
     const [feedbackDone, setFeedbackDone] = useState(false);
 
@@ -31,10 +33,10 @@ function Contacts() {
                 <h2>Контакты</h2>
                 <p>г. Санкт-петербург, Кронверский пр-т, д.49, ауд. 155 (вход со стороны ул. Сытнинской)</p>
                 <DefPhone />
-                <a className="click-more" onClick={() => setFeedbackActive(true)}>
+                <button className="click-more" onClick={() => setFeedbackActive(true)}>
                     <i className="bi bi-envelope"></i>
                     Написать нам
-                </a>
+                </button>
                 <Modal active={feedbackActive} setActive={setFeedbackActive}>
                     <FeedBackForm closeForm={setFeedbackActive} openDone={setFeedbackDone} />
                 </Modal>
@@ -44,7 +46,7 @@ function Contacts() {
             </div>
         </div>
     );
-}
+};
 
 export default Contacts;
 export { DefPhone };

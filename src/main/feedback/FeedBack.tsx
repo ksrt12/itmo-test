@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import validator from "validator";
 import InputMask from "react-input-mask";
+import "./feedback.scss";
 
-function MyInput(inputProps: any) {
+const MyInput = (inputProps: any) => {
     const { value, setValue, setValid, require, ...props } = inputProps;
     const [dirty, setDirty] = useState(false);
     const [error, setError] = useState("");
@@ -64,9 +65,9 @@ function MyInput(inputProps: any) {
             />
         </div>
     );
-}
+};
 
-function FeedBackForm(props: any) {
+const FeedBackForm = (props: any) => {
     const [formValid, setFormValid] = useState(false);
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -161,16 +162,15 @@ function FeedBackForm(props: any) {
             </button>
         </form >
     );
-}
+};
 
-function FeedBackDone(props: any) {
+const FeedBackDone = (props: any) => {
     return (
         <div className="feedbackDone">
             <h4>Спасибо за обратную связь!</h4>
             <button className="btn btn-primary" onClick={() => props.closeDone(false)}>Ок</button>
         </div>
     );
-}
-
+};
 
 export { FeedBackForm, FeedBackDone };

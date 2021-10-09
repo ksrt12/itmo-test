@@ -5,9 +5,9 @@ import fb from "./fb.svg";
 import vk from "./vk.svg";
 import inst from "./inst.svg";
 import twttr from "./twttr.svg";
+import MyLink from "../common/MyLink";
 
-function Footer() {
-
+const Footer = () => {
     const links = [
         { label: "Страница ректора", href: "#" },
         { label: "Институты и факультеты", href: "#" },
@@ -16,6 +16,7 @@ function Footer() {
         { label: "Приемная комиссия", href: "#" },
         { label: "Расписание занятий", href: "#" },
     ];
+
     return (
         <footer>
             <div className="top-block">
@@ -27,11 +28,11 @@ function Footer() {
 
                 <div className="links">
                     <div className="itmo-links">
-                        {links.map(link => <a key={link.label} href={link.href}>{link.label}</a>)}
+                        {links.map(link => <MyLink key={link.label} href={link.href}>{link.label}</MyLink>)}
                     </div>
 
                     <div className="itmo-links">
-                        {links.map(link => <a key={link.label} href={link.href}>{link.label}</a>)}
+                        {links.map(link => <MyLink key={link.label} href={link.href}>{link.label}</MyLink>)}
                     </div>
                 </div>
 
@@ -44,20 +45,20 @@ function Footer() {
 
                     <div className="social">
                         <p>Мы в соцсетях</p>
-                        <a href="https://vk.com/itmoru"><img src={vk} alt="" /></a>
-                        <a href="https://instagram.com/itmoru"><img src={inst} alt="" /></a>
-                        <a href="https://fb.com/itmoru"><img src={fb} alt="" /></a>
-                        <a href="https://twitter.com/itmoru"><img src={twttr} alt="" /></a>
+                        <MyLink href="https://vk.com/itmoru"><img src={vk} alt="" /></MyLink>
+                        <MyLink href="https://instagram.com/itmoru"><img src={inst} alt="" /></MyLink>
+                        <MyLink href="https://fb.com/itmoru"><img src={fb} alt="" /></MyLink>
+                        <MyLink href="https://twitter.com/itmoru"><img src={twttr} alt="" /></MyLink>
                     </div>
 
                 </div>
             </div>
             <div className="botton-block">
-                <a className="copy" href="#">Политика по обработке Персональных данных</a>
-                <a className="copy" href="https://itmo.ru/images/pages/79/Pravila_ispolzovanija_informacii.pdf">Правила использования информации в доменной зоне ifmo.ru</a>
+                <MyLink className="copy" href="#">Политика по обработке Персональных данных</MyLink>
+                <MyLink className="copy" href="https://itmo.ru/images/pages/79/Pravila_ispolzovanija_informacii.pdf">Правила использования информации в доменной зоне ifmo.ru</MyLink>
             </div>
         </footer>
     );
-}
+};
 
 export default Footer;

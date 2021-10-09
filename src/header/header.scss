@@ -9,9 +9,13 @@
         justify-content: space-between;
         padding: 0 2%;
 
-        .logo {
-            height: 16px;
-            width: auto;
+        a {
+            display: flex;
+            align-items: center;
+            .logo {
+                height: 16px;
+                width: auto;
+            }
         }
 
         .language {

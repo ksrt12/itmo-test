@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
-import { Iresults } from "./types";
+import emptyNews, { Iresults } from "./news";
 import NewsCard from "./NewsCard";
 import "./news.scss";
-import emptyNews from "./news";
 
-function NewsBlock() {
+const NewsBlock = () => {
     const cardsNum = 6;
 
     const [isLoaded, setIsLoaded] = useState(false);
@@ -35,7 +34,6 @@ function NewsBlock() {
                 }
             );
     }, []);
-
 
     return (
         <div className="container news">

@@ -1,8 +1,9 @@
 import parseHTML from 'html-react-parser';
-import { Inews } from "./types";
+import MyLink from "../../common/MyLink";
+import { Inews } from "./news";
 import vk from "./vk.svg";
 
-function NewsCard(props: Inews) {
+const NewsCard = (props: Inews) => {
     if (props.id === 0) {
         return <div className="news_card empty"></div>;
     } else {
@@ -14,9 +15,9 @@ function NewsCard(props: Inews) {
 
         return (
             <div className="news_card">
-                <a className="source" target="_blank" rel="noreferrer" href={props.url}>
+                <MyLink className="source" href={props.url}>
                     <img className="small" src={props.image_small} alt="u" />
-                </a>
+                </MyLink>
                 <div className="newscontent addinfo">
                     <p className="date">{date}</p>
                     <img src={vk} alt="vk" />

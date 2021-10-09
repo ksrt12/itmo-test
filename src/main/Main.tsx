@@ -3,7 +3,7 @@ import Contacts from "./contacts/Contacts";
 import NewsBlock from "./news/NewsBlock";
 import Subjects from "./subjects/Subjects";
 
-function Main() {
+const Main = () => {
     return (
         <div className="main">
             <Banner />
@@ -12,6 +12,6 @@ function Main() {
             <Contacts />
         </div>
     );
-}
+};
 
 export default Main;

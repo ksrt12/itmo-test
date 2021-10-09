@@ -1,18 +1,19 @@
 import bg from "./bg.png";
 import "./banner.scss";
 import { useState } from "react";
+import MyLink from "../../common/MyLink";
 
-function BannerCard(props: { [key: string]: string; }) {
+const BannerCard = (props: { [key: string]: string; }) => {
     return (
         <div className="banner-card" style={{ width: props.cardWidth }}>
             <h1>{props.title}</h1>
             <p>{props.text}</p>
-            <a className="click-more" href={props.href}>Подробнее</a>
+            <MyLink className="click-more" href={props.href}>Подробнее</MyLink>
         </div>
     );
-}
+};
 
-function Banner() {
+const Banner = () => {
     const [slideIndex, setSlideIndex] = useState(0);
 
     const cards = [
@@ -63,6 +64,6 @@ function Banner() {
         </div>
     );
 
-}
+};
 
 export default Banner;
