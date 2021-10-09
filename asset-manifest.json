@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/itmo-test/static/css/main.232a616d.css",
-    "main.js": "/itmo-test/static/js/main.e51a6e3d.js",
+    "main.css": "/itmo-test/static/css/main.38ec1725.css",
+    "main.js": "/itmo-test/static/js/main.06c85d6c.js",
     "static/js/787.270d770c.chunk.js": "/itmo-test/static/js/787.270d770c.chunk.js",
     "static/media/bg.png": "/itmo-test/static/media/bg.bfe0e963a5475f108efc.png",
     "static/media/bootstrap-icons.woff?": "/itmo-test/static/media/bootstrap-icons.94eeade15e6b7fbed95b.woff",
@@ -15,12 +15,12 @@
     "static/media/twttr.svg": "/itmo-test/static/media/twttr.5681bb4f25c484dba271fc188ce6d543.svg",
     "static/media/fb.svg": "/itmo-test/static/media/fb.771b6c211ad235136f420926db0c644f.svg",
     "index.html": "/itmo-test/index.html",
-    "main.232a616d.css.map": "/itmo-test/static/css/main.232a616d.css.map",
-    "main.e51a6e3d.js.map": "/itmo-test/static/js/main.e51a6e3d.js.map",
+    "main.38ec1725.css.map": "/itmo-test/static/css/main.38ec1725.css.map",
+    "main.06c85d6c.js.map": "/itmo-test/static/js/main.06c85d6c.js.map",
     "787.270d770c.chunk.js.map": "/itmo-test/static/js/787.270d770c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.232a616d.css",
-    "static/js/main.e51a6e3d.js"
+    "static/css/main.38ec1725.css",
+    "static/js/main.06c85d6c.js"
   ]
 }
