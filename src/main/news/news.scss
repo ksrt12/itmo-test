@@ -4,6 +4,9 @@
 
     h2 {
         padding: 4% 0 0 20px;
+        @media (max-width: 1200px) {
+            text-align: center;
+        }
     }
 
     .cards {
@@ -47,17 +50,14 @@
                 margin-top: revert;
                 margin-bottom: revert;
             }
-
-            .source {
-                display: flex;
-                align-items: center;
-            }
         }
-
-        .small {
+        .source {
             width: inherit;
-            border-top-left-radius: 15px;
-            border-top-right-radius: 15px;
+            .small {
+                width: inherit;
+                border-top-left-radius: 15px;
+                border-top-right-radius: 15px;
+            }
         }
 
         .text p {

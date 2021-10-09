@@ -2,10 +2,7 @@ import "./header.scss";
 import logo from "../svg/logo.svg";
 import en from "./en.svg";
 import lab from "./lablogo.svg";
-
-function makeMenuLink(title: string, href: string) {
-    return <a key={title} href={href}>{title}</a>;
-}
+import { Nav, Navbar } from "react-bootstrap";
 
 function Header() {
 
@@ -25,17 +22,21 @@ function Header() {
                     <p>En</p>
                     <img src={en} alt="en" />
                 </div>
-
             </div>
-            <div className="head">
-                <div className="head-name">
-                    <img src={lab} alt="Lab" />
-                    <a href="#">Лаборатория робототехники</a>
+            <Navbar collapseOnSelect expand="xl" >
+                <div className="nowrap-div">
+                    <Navbar.Brand href="#">
+                        <img src={lab} alt="Lab" />
+                        Лаборатория робототехники
+                    </Navbar.Brand>
+                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 </div>
-                <div className="menu">
-                    {menuLinks.map(item => makeMenuLink(item.title, item.href))}
-                </div>
-            </div>
+                <Navbar.Collapse id="responsive-navbar-nav">
+                    <Nav>
+                        {menuLinks.map(item => <Nav.Link key={item.title} href={item.href}>{item.title}</Nav.Link>)}
+                    </Nav>
+                </Navbar.Collapse>
+            </Navbar>
         </div>
     );
 

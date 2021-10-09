@@ -14,10 +14,12 @@ function NewsCard(props: Inews) {
 
         return (
             <div className="news_card">
-                <img className="small" src={props.image_small} alt="u" />
+                <a className="source" target="_blank" rel="noreferrer" href={props.url}>
+                    <img className="small" src={props.image_small} alt="u" />
+                </a>
                 <div className="newscontent addinfo">
                     <p className="date">{date}</p>
-                    <a className="source" target="_blank" rel="noreferrer" href={props.url}><img src={vk} alt="vk" /></a>
+                    <img src={vk} alt="vk" />
                 </div>
                 <div className="newscontent text">{parseHTML(props.lead)}</div>
             </div>
