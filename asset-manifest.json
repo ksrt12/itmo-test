@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/itmo-test/static/css/main.ef7d4991.chunk.css",
-    "main.js": "/itmo-test/static/js/main.6072a48b.chunk.js",
-    "main.js.map": "/itmo-test/static/js/main.6072a48b.chunk.js.map",
+    "main.css": "/itmo-test/static/css/main.73b59afe.chunk.css",
+    "main.js": "/itmo-test/static/js/main.460bc3cf.chunk.js",
+    "main.js.map": "/itmo-test/static/js/main.460bc3cf.chunk.js.map",
     "runtime-main.js": "/itmo-test/static/js/runtime-main.a9728b0c.js",
     "runtime-main.js.map": "/itmo-test/static/js/runtime-main.a9728b0c.js.map",
     "static/css/2.d0a07dce.chunk.css": "/itmo-test/static/css/2.d0a07dce.chunk.css",
@@ -12,7 +12,7 @@
     "static/js/3.0fcd40e7.chunk.js.map": "/itmo-test/static/js/3.0fcd40e7.chunk.js.map",
     "index.html": "/itmo-test/index.html",
     "static/css/2.d0a07dce.chunk.css.map": "/itmo-test/static/css/2.d0a07dce.chunk.css.map",
-    "static/css/main.ef7d4991.chunk.css.map": "/itmo-test/static/css/main.ef7d4991.chunk.css.map",
+    "static/css/main.73b59afe.chunk.css.map": "/itmo-test/static/css/main.73b59afe.chunk.css.map",
     "static/js/2.539e69b5.chunk.js.LICENSE.txt": "/itmo-test/static/js/2.539e69b5.chunk.js.LICENSE.txt",
     "static/media/bg.bfe0e963.png": "/itmo-test/static/media/bg.bfe0e963.png",
     "static/media/bootstrap-icons.css": "/itmo-test/static/media/bootstrap-icons.dfd0ea12.woff2",
@@ -31,7 +31,7 @@
     "static/js/runtime-main.a9728b0c.js",
     "static/css/2.d0a07dce.chunk.css",
     "static/js/2.539e69b5.chunk.js",
-    "static/css/main.ef7d4991.chunk.css",
-    "static/js/main.6072a48b.chunk.js"
+    "static/css/main.73b59afe.chunk.css",
+    "static/js/main.460bc3cf.chunk.js"
   ]
 }
