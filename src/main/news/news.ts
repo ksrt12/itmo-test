@@ -1,10 +1,9 @@
-
 interface Icategory {
     category_id: number,
     category_title: string,
     color_title: string,
     color: string;
-};
+}
 
 interface Inews {
     category: Icategory,
