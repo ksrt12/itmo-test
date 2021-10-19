@@ -8,11 +8,6 @@ const NewsBlock = () => {
     const cardsNum = 6;
     const [items, setItems] = useState({} as Iresults);
 
-    const empty = [];
-    for (let i = 0; i < cardsNum; i++) {
-        empty.push(<NewsCard key={i} {...emptyNews} />);
-    }
-
     useEffect(() => loadData(cardsNum, setItems), []);
 
     return (
@@ -21,7 +16,7 @@ const NewsBlock = () => {
             <div className="cards">
                 {Object.keys(items).length ?
                     items.news.map(item => <NewsCard key={item.id} {...item} />)
-                    : empty
+                    : Array(cardsNum).fill(0).map(((_, i) => <NewsCard key={i} {...emptyNews} />))
                 }
             </div>
         </div>

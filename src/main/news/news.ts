@@ -29,13 +29,13 @@ interface Iresults {
 }
 
 const
-    emptyCategory = {
+    emptyCategory: Icategory = {
         "category_id": 0,
         "category_title": "",
         "color_title": "",
         "color": ""
     },
-    emptyNews = {
+    emptyNews: Inews = {
         "id": 0,
         "title": "",
         "image_small": "",
